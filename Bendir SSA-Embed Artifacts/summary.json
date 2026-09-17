@@ -1,0 +1,589 @@
+{
+  "dataset_root": "/kaggle/input/datasets/kalyannandi0007/bendir-dataset-final-v3/_bendir-dataset-final-v3",
+  "categories": [
+    "advertisements",
+    "book_covers",
+    "books",
+    "comics",
+    "magazines",
+    "news_papers",
+    "poems"
+  ],
+  "split_counts": {
+    "train": 8035,
+    "val": 2009,
+    "test": 6047
+  },
+  "protocol": {
+    "training": "train split only (val used for model selection, test held out)",
+    "retrieval": "instance-level: query = augmented view, hit = same source image",
+    "query_augmentation": "rotation +/-3deg, GaussianBlur k=3, brightness/contrast jitter, JPEG Q=70"
+  },
+  "ssa_full_page": {
+    "R@1": 0.9556805027286258,
+    "R@5": 0.9909045807838598,
+    "R@10": 0.9948734909872664,
+    "MRR": 0.97164141603887,
+    "mAP": 0.9716397786996772,
+    "median_rank": 1.0
+  },
+  "ssa_per_genre": [
+    {
+      "R@1": 0.9876923076923076,
+      "R@5": 1.0,
+      "R@10": 1.0,
+      "MRR": 0.9938461538461538,
+      "mAP": 0.9938461538461538,
+      "median_rank": 1.0,
+      "genre": "advertisements",
+      "n": 325
+    },
+    {
+      "R@1": 0.9757575757575757,
+      "R@5": 1.0,
+      "R@10": 1.0,
+      "MRR": 0.9878787878787879,
+      "mAP": 0.9878787878787879,
+      "median_rank": 1.0,
+      "genre": "book_covers",
+      "n": 165
+    },
+    {
+      "R@1": 0.9008363201911589,
+      "R@5": 0.972520908004779,
+      "R@10": 0.9838709677419355,
+      "MRR": 0.9326941736526541,
+      "mAP": 0.9326882590827025,
+      "median_rank": 1.0,
+      "genre": "books",
+      "n": 1674
+    },
+    {
+      "R@1": 0.9949341438703141,
+      "R@5": 1.0,
+      "R@10": 1.0,
+      "MRR": 0.997467071935157,
+      "mAP": 0.997467071935157,
+      "median_rank": 1.0,
+      "genre": "comics",
+      "n": 987
+    },
+    {
+      "R@1": 0.9338235294117647,
+      "R@5": 0.9917279411764706,
+      "R@10": 0.9963235294117647,
+      "MRR": 0.9601123738595317,
+      "mAP": 0.9601123738595317,
+      "median_rank": 1.0,
+      "genre": "magazines",
+      "n": 1088
+    },
+    {
+      "R@1": 0.9871086556169429,
+      "R@5": 1.0,
+      "R@10": 1.0,
+      "MRR": 0.9932473910374462,
+      "mAP": 0.9932473910374462,
+      "median_rank": 1.0,
+      "genre": "news_papers",
+      "n": 543
+    },
+    {
+      "R@1": 0.9920948616600791,
+      "R@5": 1.0,
+      "R@10": 1.0,
+      "MRR": 0.9958498023715415,
+      "mAP": 0.9958498023715415,
+      "median_rank": 1.0,
+      "genre": "poems",
+      "n": 1265
+    }
+  ],
+  "baselines_full_page": [
+    {
+      "model": "SSA-Embed",
+      "micro_R@1": 0.9556805027286258,
+      "micro_R@5": 0.9909045807838598,
+      "micro_R@10": 0.9948734909872664,
+      "micro_MRR": 0.97164141603887,
+      "micro_mAP": 0.9716397786996772,
+      "macro_R@1": 0.9674639134571633,
+      "macro_R@5": 0.9948926927401784,
+      "macro_R@10": 0.9971706424505287,
+      "macro_MRR": 0.9801565363687531,
+      "macro_mAP": 0.9801556914301887,
+      "micro_median_rank": 1.0
+    },
+    {
+      "model": "siglip2_zs",
+      "micro_R@1": 0.8956507359021002,
+      "micro_R@5": 0.9520423350421696,
+      "micro_R@10": 0.9651066644617166,
+      "micro_MRR": 0.9209122237182573,
+      "micro_mAP": 0.9208581915248941,
+      "macro_R@1": 0.9271344993382965,
+      "macro_R@5": 0.9709369938981058,
+      "macro_R@10": 0.9790424808376608,
+      "macro_MRR": 0.947038697080942,
+      "macro_mAP": 0.9470067183307493,
+      "micro_median_rank": 1.0
+    },
+    {
+      "model": "clip",
+      "micro_R@1": 0.7512816272531834,
+      "micro_R@5": 0.8445510170332396,
+      "micro_R@10": 0.8774598974698198,
+      "micro_MRR": 0.7964662186930515,
+      "micro_mAP": 0.7960519718772667,
+      "macro_R@1": 0.8393789396440842,
+      "macro_R@5": 0.9093217426364751,
+      "macro_R@10": 0.9304960841566722,
+      "macro_MRR": 0.8727008323899693,
+      "macro_mAP": 0.8724811936712981,
+      "micro_median_rank": 1.0
+    },
+    {
+      "model": "dinov2",
+      "micro_R@1": 0.6388291714899951,
+      "micro_R@5": 0.7033239622953531,
+      "micro_R@10": 0.737886555316686,
+      "micro_MRR": 0.6737764349158222,
+      "micro_mAP": 0.6725582545563608,
+      "macro_R@1": 0.771304471446249,
+      "macro_R@5": 0.8219893354066999,
+      "macro_R@10": 0.8454167935538078,
+      "macro_MRR": 0.7980482566090731,
+      "macro_mAP": 0.7973584293960961,
+      "micro_median_rank": 1.0
+    },
+    {
+      "model": "donut",
+      "micro_R@1": 0.9631222093600132,
+      "micro_R@5": 0.9869356705804532,
+      "micro_R@10": 0.9912353233008103,
+      "micro_MRR": 0.9737416325017414,
+      "micro_mAP": 0.9737318084665845,
+      "macro_R@1": 0.9398213523435389,
+      "macro_R@5": 0.9734194622866085,
+      "macro_R@10": 0.9798812326708031,
+      "macro_MRR": 0.9549414751340942,
+      "macro_mAP": 0.9549175559478245,
+      "micro_median_rank": 1.0
+    }
+  ],
+  "per_genre_comparison": [
+    {
+      "genre": "advertisements",
+      "SSA-Embed": 0.9876923076923076,
+      "siglip2_zs": 0.96,
+      "clip": 0.9415384615384615,
+      "dinov2": 0.9538461538461539,
+      "donut": 0.9415384615384615
+    },
+    {
+      "genre": "book_covers",
+      "SSA-Embed": 0.9757575757575757,
+      "siglip2_zs": 0.9757575757575757,
+      "clip": 0.9757575757575757,
+      "dinov2": 0.9757575757575757,
+      "donut": 0.8424242424242424
+    },
+    {
+      "genre": "books",
+      "SSA-Embed": 0.9008363201911589,
+      "siglip2_zs": 0.7759856630824373,
+      "clip": 0.45221027479091996,
+      "dinov2": 0.3106332138590203,
+      "donut": 0.974910394265233
+    },
+    {
+      "genre": "comics",
+      "SSA-Embed": 0.9949341438703141,
+      "siglip2_zs": 0.9918946301925026,
+      "clip": 0.9685916919959473,
+      "dinov2": 0.9888551165146909,
+      "donut": 0.9513677811550152
+    },
+    {
+      "genre": "magazines",
+      "SSA-Embed": 0.9338235294117647,
+      "siglip2_zs": 0.8529411764705882,
+      "clip": 0.8189338235294118,
+      "dinov2": 0.7931985294117647,
+      "donut": 0.9705882352941176
+    },
+    {
+      "genre": "news_papers",
+      "SSA-Embed": 0.9871086556169429,
+      "siglip2_zs": 0.9815837937384899,
+      "clip": 0.9723756906077348,
+      "dinov2": 0.9815837937384899,
+      "donut": 0.8987108655616943
+    },
+    {
+      "genre": "poems",
+      "SSA-Embed": 0.9920948616600791,
+      "siglip2_zs": 0.9517786561264822,
+      "clip": 0.7462450592885376,
+      "dinov2": 0.3952569169960474,
+      "donut": 0.9992094861660079
+    }
+  ],
+  "degradation_summary_s3": [
+    {
+      "model": "SSA-Embed",
+      "blur": 0.9978501736398214,
+      "jpeg": 0.9985116586737224,
+      "noise": 0.924756077393749,
+      "downres": 0.9985116586737224,
+      "illum": 0.9446006284107822,
+      "skew": 0.7813791962956839
+    },
+    {
+      "model": "siglip2_zs",
+      "blur": 0.9882586406482552,
+      "jpeg": 0.9985116586737224,
+      "noise": 0.6699189680833472,
+      "downres": 0.998180916156772,
+      "illum": 0.8635687117578965,
+      "skew": 0.5308417397056392
+    },
+    {
+      "model": "clip",
+      "blur": 0.9905738382669091,
+      "jpeg": 0.9983462874152472,
+      "noise": 0.7059699024309575,
+      "downres": 0.9986770299321978,
+      "illum": 0.7188688605920291,
+      "skew": 0.4668430626757069
+    },
+    {
+      "model": "dinov2",
+      "blur": 0.9966925748304944,
+      "jpeg": 0.9985116586737224,
+      "noise": 0.5629237638498429,
+      "downres": 0.9985116586737224,
+      "illum": 0.7077889862741855,
+      "skew": 0.523565404332727
+    },
+    {
+      "model": "donut",
+      "blur": 0.9603108979659336,
+      "jpeg": 0.9985116586737224,
+      "noise": 0.8066809988424012,
+      "downres": 0.9915660658177607,
+      "illum": 0.6141888539771788,
+      "skew": 0.2804696543740698
+    }
+  ],
+  "ablation": [
+    {
+      "variant": "infonce_only",
+      "R@1": 0.8680337357367289,
+      "R@5": 0.9464197122540102,
+      "R@10": 0.9642798081693401,
+      "MRR": 0.9037067687234738
+    },
+    {
+      "variant": "infonce_distill",
+      "R@1": 0.9550190176947246,
+      "R@5": 0.9914006945592856,
+      "R@10": 0.9955349760211675,
+      "MRR": 0.970249420213691
+    },
+    {
+      "variant": "infonce_distill_matra",
+      "R@1": 0.9654374069786671,
+      "R@5": 0.9925582933686126,
+      "R@10": 0.9952042335042169,
+      "MRR": 0.9771035509184531
+    },
+    {
+      "variant": "infonce_distill_conj",
+      "R@1": 0.9621299818091615,
+      "R@5": 0.9909045807838598,
+      "R@10": 0.9966925748304944,
+      "MRR": 0.9751591015990387
+    },
+    {
+      "variant": "infonce_distill_baseline",
+      "R@1": 0.9507193649743675,
+      "R@5": 0.9895816107160575,
+      "R@10": 0.9937158921779394,
+      "MRR": 0.9678432862851495
+    },
+    {
+      "variant": "all",
+      "R@1": 0.9556805027286258,
+      "R@5": 0.9909045807838598,
+      "R@10": 0.9948734909872664,
+      "MRR": 0.97164141603887
+    }
+  ],
+  "multiseed_results": [
+    {
+      "seed": 44,
+      "R@1": 0.9556805027286258,
+      "R@5": 0.9909045807838598,
+      "R@10": 0.9948734909872664,
+      "MRR": 0.97164141603887,
+      "mAP": 0.9716397786996772,
+      "median_rank": 1.0
+    },
+    {
+      "seed": 45,
+      "R@1": 0.9565073590210021,
+      "R@5": 0.9905738382669093,
+      "R@10": 0.9953696047626922,
+      "MRR": 0.9715463887614089,
+      "mAP": 0.9715447514222161,
+      "median_rank": 1.0
+    },
+    {
+      "seed": 46,
+      "R@1": 0.9584918141227055,
+      "R@5": 0.9900777244914833,
+      "R@10": 0.9952042335042169,
+      "MRR": 0.9729383215323483,
+      "mAP": 0.9729383215323483,
+      "median_rank": 1.0
+    }
+  ],
+  "multiseed_summary": [
+    {
+      "seed": "mean",
+      "R@1": 0.9568932252907777,
+      "R@5": 0.9905187145140841,
+      "R@10": 0.9951491097513919,
+      "MRR": 0.9720420421108757,
+      "mAP": 0.9720409505514138
+    },
+    {
+      "seed": "std",
+      "R@1": 0.0014448313127259666,
+      "R@5": 0.0004161752072802677,
+      "R@10": 0.00025260876991100537,
+      "MRR": 0.0007776536162597134,
+      "mAP": 0.0007785971705142629
+    }
+  ],
+  "map_cmc_summary": [
+    {
+      "model": "SSA-Embed",
+      "mAP": 0.9716397786996772,
+      "CMC@1": 0.9556805027286258,
+      "CMC@5": 0.9909045807838598,
+      "CMC@10": 0.9948734909872664,
+      "CMC@20": 0.9975194311228709
+    },
+    {
+      "model": "siglip2_zs",
+      "mAP": 0.9208581915248941,
+      "CMC@1": 0.8956507359021002,
+      "CMC@5": 0.9520423350421696,
+      "CMC@10": 0.9651066644617166,
+      "CMC@20": 0.9770133950719365
+    },
+    {
+      "model": "clip",
+      "mAP": 0.7960519718772667,
+      "CMC@1": 0.7512816272531834,
+      "CMC@5": 0.8445510170332396,
+      "CMC@10": 0.8774598974698198,
+      "CMC@20": 0.9085496940631719
+    },
+    {
+      "model": "dinov2",
+      "mAP": 0.6725582545563608,
+      "CMC@1": 0.6388291714899951,
+      "CMC@5": 0.7033239622953531,
+      "CMC@10": 0.737886555316686,
+      "CMC@20": 0.7745989746981975
+    },
+    {
+      "model": "donut",
+      "mAP": 0.9737318084665845,
+      "CMC@1": 0.9631222093600132,
+      "CMC@5": 0.9869356705804532,
+      "CMC@10": 0.9912353233008103,
+      "CMC@20": 0.9942120059533653
+    }
+  ],
+  "cmc_max_k": 50,
+  "state": {
+    "train_ssa_v2": {
+      "done": true,
+      "ts": "2026-09-13T02:35:38.420448Z",
+      "epochs": 8,
+      "path": "/kaggle/working/bendir_out/ssa_embed_v2.pt",
+      "best_val_loss": 0.16091150144440314
+    },
+    "embed_test": {
+      "done": true,
+      "ts": "2026-09-13T02:40:34.001919Z",
+      "n": 6047,
+      "d": 512
+    },
+    "ablation_infonce_only": {
+      "done": true,
+      "ts": "2026-09-13T06:47:26.693182Z",
+      "best_val": 0.17983747060809815,
+      "path": "/kaggle/working/bendir_out/ablation/infonce_only_best.pt",
+      "epochs": 8,
+      "cfg": {
+        "distill": false,
+        "matra": false,
+        "conj": false,
+        "baseline": false
+      }
+    },
+    "snapshot_infonce_only": {
+      "done": true,
+      "ts": "2026-09-13T06:47:56.398692Z",
+      "n_files": 11,
+      "bytes": 1538473119
+    },
+    "ablation_infonce_distill": {
+      "done": true,
+      "ts": "2026-09-13T10:29:09.415128Z",
+      "best_val": 0.15301073923529612,
+      "path": "/kaggle/working/bendir_out/ablation/infonce_distill_best.pt",
+      "epochs": 8,
+      "cfg": {
+        "distill": true,
+        "matra": false,
+        "conj": false,
+        "baseline": false
+      }
+    },
+    "ablation_infonce_distill_matra": {
+      "done": true,
+      "ts": "2026-09-13T14:46:57.600769Z",
+      "best_val": 0.11614325249360667,
+      "path": "/kaggle/working/bendir_out/ablation/infonce_distill_matra_best.pt",
+      "epochs": 8,
+      "cfg": {
+        "distill": true,
+        "matra": true,
+        "conj": false,
+        "baseline": false
+      }
+    },
+    "ablation_infonce_distill_conj": {
+      "done": true,
+      "ts": "2026-09-13T19:34:55.636816Z",
+      "best_val": 0.17859964316622132,
+      "path": "/kaggle/working/bendir_out/ablation/infonce_distill_conj_best.pt",
+      "epochs": 8,
+      "cfg": {
+        "distill": true,
+        "matra": false,
+        "conj": true,
+        "baseline": false
+      }
+    },
+    "snapshot_infonce_distill_conj": {
+      "done": true,
+      "ts": "2026-09-13T19:36:47.136480Z",
+      "n_files": 14,
+      "bytes": 2672226594
+    },
+    "ablation_infonce_distill_baseline": {
+      "done": true,
+      "ts": "2026-09-13T23:07:38.384912Z",
+      "best_val": 0.15262058130391534,
+      "path": "/kaggle/working/bendir_out/ablation/infonce_distill_baseline_best.pt",
+      "epochs": 8,
+      "cfg": {
+        "distill": true,
+        "matra": false,
+        "conj": false,
+        "baseline": true
+      }
+    },
+    "ablation_all": {
+      "done": true,
+      "ts": "2026-09-15T06:46:51.123821Z",
+      "reused_from": "/kaggle/working/bendir_out/ssa_embed_v2.pt",
+      "path": "/kaggle/working/bendir_out/ablation/all_best.pt"
+    },
+    "degradation": {
+      "done": true,
+      "ts": "2026-09-14T08:51:18.910537Z"
+    },
+    "multiseed_train_44": {
+      "done": true,
+      "ts": "2026-09-15T06:47:14.289338Z",
+      "reused_from": "/kaggle/working/bendir_out/ssa_embed_v2.pt",
+      "path": "/kaggle/working/bendir_out/multiseed/ssa_embed_seed44.pt"
+    },
+    "multiseed_train_45": {
+      "done": true,
+      "ts": "2026-09-14T15:30:17.475409Z",
+      "best_val": 0.18076827536736215,
+      "path": "/kaggle/working/bendir_out/multiseed/ssa_embed_seed45.pt",
+      "epochs": 8,
+      "seed": 45
+    },
+    "multiseed_train_46": {
+      "done": true,
+      "ts": "2026-09-14T19:04:49.811316Z",
+      "best_val": 0.1850949949363158,
+      "path": "/kaggle/working/bendir_out/multiseed/ssa_embed_seed46.pt",
+      "epochs": 8,
+      "seed": 46
+    },
+    "baseline_siglip2_zs": {
+      "done": true,
+      "ts": "2026-09-15T03:46:22.704979Z"
+    },
+    "baseline_clip": {
+      "done": true,
+      "ts": "2026-09-15T03:59:23.797449Z"
+    },
+    "baseline_dinov2": {
+      "done": true,
+      "ts": "2026-09-15T04:11:31.124155Z"
+    },
+    "baseline_donut": {
+      "done": true,
+      "ts": "2026-09-15T05:06:56.221086Z"
+    },
+    "snapshot_baselines": {
+      "done": true,
+      "ts": "2026-09-02T05:55:25.401641Z"
+    },
+    "degradation_baseline_siglip2_zs": {
+      "done": true,
+      "ts": "2026-09-02T09:00:00.549969Z"
+    },
+    "snapshot_clip_degradation_middle": {
+      "done": true,
+      "ts": "2026-09-02T10:52:55.519267Z"
+    },
+    "degradation_baseline_clip": {
+      "done": true,
+      "ts": "2026-09-02T13:24:06.860362Z"
+    },
+    "snapshot_degredation_dino": {
+      "done": true,
+      "ts": "2026-09-02T15:45:08.354627Z",
+      "n_files": 39,
+      "bytes": 1402765031
+    },
+    "degradation_baseline_dinov2": {
+      "done": true,
+      "ts": "2026-09-02T16:52:55.901966Z"
+    },
+    "snapshot_degredation_dinov2": {
+      "done": true,
+      "ts": "2026-09-02T16:53:54.228329Z",
+      "n_files": 39,
+      "bytes": 1402766700
+    },
+    "degradation_baseline_donut": {
+      "done": true,
+      "ts": "2026-09-15T06:40:25.734305Z"
+    }
+  }
+}

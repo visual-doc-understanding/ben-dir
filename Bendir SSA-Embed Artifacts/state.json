@@ -1,0 +1,201 @@
+{
+  "train_ssa_v2": {
+    "done": true,
+    "ts": "2026-09-13T02:35:38.420448Z",
+    "epochs": 8,
+    "path": "/kaggle/working/bendir_out/ssa_embed_v2.pt",
+    "best_val_loss": 0.16091150144440314
+  },
+  "embed_test": {
+    "done": true,
+    "ts": "2026-09-13T02:40:34.001919Z",
+    "n": 6047,
+    "d": 512
+  },
+  "ablation_infonce_only": {
+    "done": true,
+    "ts": "2026-09-13T06:47:26.693182Z",
+    "best_val": 0.17983747060809815,
+    "path": "/kaggle/working/bendir_out/ablation/infonce_only_best.pt",
+    "epochs": 8,
+    "cfg": {
+      "distill": false,
+      "matra": false,
+      "conj": false,
+      "baseline": false
+    }
+  },
+  "snapshot_infonce_only": {
+    "done": true,
+    "ts": "2026-09-13T06:47:56.398692Z",
+    "n_files": 11,
+    "bytes": 1538473119
+  },
+  "ablation_infonce_distill": {
+    "done": true,
+    "ts": "2026-09-13T10:29:09.415128Z",
+    "best_val": 0.15301073923529612,
+    "path": "/kaggle/working/bendir_out/ablation/infonce_distill_best.pt",
+    "epochs": 8,
+    "cfg": {
+      "distill": true,
+      "matra": false,
+      "conj": false,
+      "baseline": false
+    }
+  },
+  "ablation_infonce_distill_matra": {
+    "done": true,
+    "ts": "2026-09-13T14:46:57.600769Z",
+    "best_val": 0.11614325249360667,
+    "path": "/kaggle/working/bendir_out/ablation/infonce_distill_matra_best.pt",
+    "epochs": 8,
+    "cfg": {
+      "distill": true,
+      "matra": true,
+      "conj": false,
+      "baseline": false
+    }
+  },
+  "ablation_infonce_distill_conj": {
+    "done": true,
+    "ts": "2026-09-13T19:34:55.636816Z",
+    "best_val": 0.17859964316622132,
+    "path": "/kaggle/working/bendir_out/ablation/infonce_distill_conj_best.pt",
+    "epochs": 8,
+    "cfg": {
+      "distill": true,
+      "matra": false,
+      "conj": true,
+      "baseline": false
+    }
+  },
+  "snapshot_infonce_distill_conj": {
+    "done": true,
+    "ts": "2026-09-13T19:36:47.136480Z",
+    "n_files": 14,
+    "bytes": 2672226594
+  },
+  "ablation_infonce_distill_baseline": {
+    "done": true,
+    "ts": "2026-09-13T23:07:38.384912Z",
+    "best_val": 0.15262058130391534,
+    "path": "/kaggle/working/bendir_out/ablation/infonce_distill_baseline_best.pt",
+    "epochs": 8,
+    "cfg": {
+      "distill": true,
+      "matra": false,
+      "conj": false,
+      "baseline": true
+    }
+  },
+  "ablation_all": {
+    "done": true,
+    "ts": "2026-09-15T09:40:09.689192Z",
+    "reused_from": "/kaggle/working/bendir_out/ssa_embed_v2.pt",
+    "path": "/kaggle/working/bendir_out/ablation/all_best.pt"
+  },
+  "degradation": {
+    "done": true,
+    "ts": "2026-09-14T08:51:18.910537Z"
+  },
+  "multiseed_train_44": {
+    "done": true,
+    "ts": "2026-09-15T06:47:14.289338Z",
+    "reused_from": "/kaggle/working/bendir_out/ssa_embed_v2.pt",
+    "path": "/kaggle/working/bendir_out/multiseed/ssa_embed_seed44.pt"
+  },
+  "multiseed_train_45": {
+    "done": true,
+    "ts": "2026-09-14T15:30:17.475409Z",
+    "best_val": 0.18076827536736215,
+    "path": "/kaggle/working/bendir_out/multiseed/ssa_embed_seed45.pt",
+    "epochs": 8,
+    "seed": 45
+  },
+  "multiseed_train_46": {
+    "done": true,
+    "ts": "2026-09-14T19:04:49.811316Z",
+    "best_val": 0.1850949949363158,
+    "path": "/kaggle/working/bendir_out/multiseed/ssa_embed_seed46.pt",
+    "epochs": 8,
+    "seed": 46
+  },
+  "baseline_siglip2_zs": {
+    "done": true,
+    "ts": "2026-09-15T03:46:22.704979Z"
+  },
+  "baseline_clip": {
+    "done": true,
+    "ts": "2026-09-15T03:59:23.797449Z"
+  },
+  "baseline_dinov2": {
+    "done": true,
+    "ts": "2026-09-15T04:11:31.124155Z"
+  },
+  "baseline_donut": {
+    "done": true,
+    "ts": "2026-09-15T05:06:56.221086Z"
+  },
+  "snapshot_baselines": {
+    "done": true,
+    "ts": "2026-09-02T05:55:25.401641Z"
+  },
+  "degradation_baseline_siglip2_zs": {
+    "done": true,
+    "ts": "2026-09-02T09:00:00.549969Z"
+  },
+  "snapshot_clip_degradation_middle": {
+    "done": true,
+    "ts": "2026-09-02T10:52:55.519267Z"
+  },
+  "degradation_baseline_clip": {
+    "done": true,
+    "ts": "2026-09-02T13:24:06.860362Z"
+  },
+  "snapshot_degredation_dino": {
+    "done": true,
+    "ts": "2026-09-02T15:45:08.354627Z",
+    "n_files": 39,
+    "bytes": 1402765031
+  },
+  "degradation_baseline_dinov2": {
+    "done": true,
+    "ts": "2026-09-02T16:52:55.901966Z"
+  },
+  "snapshot_degredation_dinov2": {
+    "done": true,
+    "ts": "2026-09-02T16:53:54.228329Z",
+    "n_files": 39,
+    "bytes": 1402766700
+  },
+  "degradation_baseline_donut": {
+    "done": true,
+    "ts": "2026-09-15T06:40:25.734305Z"
+  },
+  "degradation_ablation_sev3_infonce_only": {
+    "done": true,
+    "ts": "2026-09-15T10:19:25.623250Z"
+  },
+  "degradation_ablation_sev3_infonce_distill": {
+    "done": true,
+    "ts": "2026-09-15T10:58:20.898408Z"
+  },
+  "degradation_ablation_sev3_infonce_distill_matra": {
+    "done": true,
+    "ts": "2026-09-15T11:37:04.614700Z"
+  },
+  "degradation_ablation_sev3_infonce_distill_conj": {
+    "done": true,
+    "ts": "2026-09-15T12:16:15.258179Z"
+  },
+  "degradation_ablation_sev3_infonce_distill_baseline": {
+    "done": true,
+    "ts": "2026-09-15T12:55:22.712988Z"
+  },
+  "degradation_ablation_sev3_all": {
+    "done": true,
+    "ts": "2026-09-15T12:55:22.722374Z",
+    "reused_from": "/kaggle/working/bendir_out/degradation_results.csv"
+  }
+}
